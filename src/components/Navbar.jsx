@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
+import resumeFile from '../upload/Foziya-Resume.pdf';
 
 const Navbar = ({ scrollY, theme, toggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +22,7 @@ const Navbar = ({ scrollY, theme, toggleTheme }) => {
           <a href="#experience" className="text-muted hover:text-accent-neon font-medium transition-colors" onClick={() => setIsOpen(false)}>Experience</a>
           <a href="#contact" className="text-muted hover:text-accent-neon font-medium transition-colors" onClick={() => setIsOpen(false)}>Contact</a>
           {isOpen && (
-             <a href="/cv.pdf" download className="btn btn-outline mt-4" onClick={() => setIsOpen(false)}>
+             <a href={resumeFile} download="Foziya_Resume.pdf" className="btn btn-outline mt-4" onClick={() => setIsOpen(false)}>
                Download CV
              </a>
           )}
@@ -35,7 +36,7 @@ const Navbar = ({ scrollY, theme, toggleTheme }) => {
           >
             {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
           </button>
-          <a href="/cv.pdf" download className="btn btn-outline hidden md:inline-flex px-4 py-2 text-sm">Download CV</a>
+          <a href={resumeFile} download="Foziya_Resume.pdf" className="btn btn-outline hidden md:inline-flex px-4 py-2 text-sm">Download CV</a>
           <button className="md:hidden text-text" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

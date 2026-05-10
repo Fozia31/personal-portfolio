@@ -1,4 +1,5 @@
 import { Target, Package, Recycle, Code2, Layers, Cpu, Sparkles, MapPin, GraduationCap, Heart, Download } from 'lucide-react';
+import resumeFile from '../upload/Foziya-Resume.pdf';
 import profileImg from '../assets/foziya.png';
 
 const stats = [
@@ -104,7 +105,7 @@ const About = () => {
             </div>
 
             <a
-              href="/cv.pdf" download
+              href={resumeFile} download="Foziya_Resume.pdf"
               className="btn btn-outline text-sm w-full py-2.5"
             >
               <Download size={16} /> Download Resume
